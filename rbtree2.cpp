@@ -732,7 +732,12 @@ class RedBlackTree {
         RBTNode* root;
         vector<int> nodes_order_added;
 
-        // ToInfixString (private impl) -- print left, print root, print right
+        /**
+         * @brief ToInfixString (private impl) -- print left, print root, print right
+         * 
+         * @param node 
+         * @return string 
+         */
         string ToInfixString(struct RBTNode* node) const {
             ostringstream nodeOSS;
 
@@ -756,7 +761,12 @@ class RedBlackTree {
             return nodeOSS.str();
         };
 
-        // ToPrefixString (private impl) -- prints node, then left, then right
+        /**
+         * @brief ToPrefixString (private impl) -- prints node, then left, then right
+         * 
+         * @param node 
+         * @return string 
+         */
         string ToPrefixString(struct RBTNode* node) const {
             ostringstream nodeOSS;
             if (node != nullptr) {
