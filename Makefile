@@ -1,6 +1,7 @@
 all:
 
-	g++-11 -Wall rbtree2.cpp -o rbtree2
+	#g++-11 -Wall rbtree2.cpp -o rbtree2
+	g++ -Wall rbtree2.cpp -o rbtree2
 
 run:
 
