@@ -1,6 +1,7 @@
 /**
- * @file rbtree2.cpp
- * @author Brennan (brennandoubt@gmail.com)
+ * @file
+ * @author [Brennan Allen](https://github.com/brennandoubt)
+ * (brennandoubt@gmail.com)
  * @brief A Red-Black Tree (RBT) program with test cases.
  * @version 0.1
  * @date 2022-12-29
@@ -898,6 +899,11 @@ class RedBlackTree {
         }
 };
 
+
+/**
+ * @brief self-test by calling constructor
+ * @returns void
+ */
 void TestSimpleConstructor() {
     cout << "Testing Simple Constructor... " << endl;
     RedBlackTree rbt = RedBlackTree();
@@ -907,6 +913,10 @@ void TestSimpleConstructor() {
     cout << "PASSED!"<< endl << endl;
 }
 
+/**
+ * @brief simple insert of a value into tree
+ * @returns void
+ */
 void TestInsertFirstNode() {
     cout << "Testing Insert One Node..." << endl;
     RedBlackTree rbt = RedBlackTree();
@@ -917,6 +927,10 @@ void TestInsertFirstNode() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief test inserting two values into tree
+ * @returns void
+ */
 void TestInsertSecondNode() {
     cout << "Testing Insert Second Node..." << endl;
     RedBlackTree *rbt = new RedBlackTree();
@@ -936,6 +950,11 @@ void TestInsertSecondNode() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief test inserting three nodes into tree
+ * (and making rotations occur)
+ * @returns void
+ */
 void TestInsertThirdNode() {
     cout << "Testing Insert Third Node..." << endl;
     RedBlackTree *rbt = new RedBlackTree();
@@ -989,6 +1008,10 @@ void TestInsertThirdNode() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief test inserting four values into tree
+ * @returns void
+ */
 void TestInsertFourthNode() {
     cout << "Testing Insert Fourth Node..." << endl;
 
@@ -1014,6 +1037,10 @@ void TestInsertFourthNode() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief test inserting five nodes into tree
+ * @returns void
+ */
 void TestInsertFifthNode() {
     cout << "Testing Insert Fifth Node..." << endl;
     RedBlackTree *rbt = new RedBlackTree();
@@ -1038,7 +1065,11 @@ void TestInsertFifthNode() {
     cout << "PASSED!" << endl << endl;
 }
 
-
+/**
+ * @brief testing if string functions
+ * return correct values
+ * @returns void
+ */
 void TestToStrings() {
     cout << "Testing ToString Methods..." << endl;
 
@@ -1057,6 +1088,11 @@ void TestToStrings() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief additional testing with inserts into tree
+ * using different values
+ * @returns void
+ */
 void TestInsertRandomTests() {
     cout << "Testing Random Insert Stuff..." << endl;
     cout << "\t This test passes if it doesn't crash and valgrind"
@@ -1100,6 +1136,11 @@ void TestInsertRandomTests() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief testing copy constructor by
+ * copying a tree
+ * @returns void
+ */
 void TestCopyConstructor() {
     cout << "Testing Copy Constructor..." << endl;
 
@@ -1123,7 +1164,11 @@ void TestCopyConstructor() {
     cout << "PASSED!" << endl << endl;
 }
 
-
+/**
+ * @brief testing if Contains() function correctly
+ * determines if a value is in the tree
+ * @returns void
+ */
 void TestContains() {
     cout << "Testing Contains..." << endl;
     RedBlackTree *rbt = new RedBlackTree();
@@ -1152,7 +1197,11 @@ void TestContains() {
     cout << "PASSED!" << endl << endl;
 }
 
-
+/**
+ * @brief testing GetMin(), GetMax() functions return
+ * correct outputs
+ * @returns void
+ */
 void TestGetMinimumMaximum() {
     cout << "Testing Get Minimum and Get Maximum..." << endl;
 
@@ -1169,6 +1218,10 @@ void TestGetMinimumMaximum() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief additional testing of copy constructor
+ * @returns void
+ */
 void TestCopyConstructor2() {
     cout << "Testing Copy Constructor..." << endl;
 
@@ -1252,7 +1305,11 @@ void TestCopyConstructor2() {
     cout << "PASSED!" << endl << endl;
 }
 
-
+/**
+ * @brief testing if tree properly
+ * balances out when inserting values
+ * @returns void
+ */
 void TestInsertWithRecursiveFixUp() {
     cout << "Testing Recursive FixUp..." << endl;
 
@@ -1280,11 +1337,25 @@ void TestInsertWithRecursiveFixUp() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief helper for the test functions
+ * in printing/evaluating their outputs
+ * 
+ * @param desc brief description of this test
+ * @param rbt red black tree used for this test
+ * @param exp_ans correct output for this test (to compare
+ * with actual output)
+ */
 void PrintTestLine(string desc, const RedBlackTree* rbt, string exp_ans) {
     cout << desc << ": " << rbt->ToPrefixString() << endl;
     assert(rbt->ToPrefixString() == exp_ans);
 }
 
+/**
+ * @brief testing removing values from tree
+ * (removing a root node with one child)
+ * @returns void
+ */
 void RemoveTest1() {
     cout << "Testing removing root (with one child)..." << endl;
 
@@ -1314,6 +1385,11 @@ void RemoveTest1() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief additional testing of removing values
+ * from tree (removing a leaf node)
+ * @returns void
+ */
 void RemoveTest2() {
     cout << "Testing removing leaf..." << endl;
 
@@ -1337,6 +1413,11 @@ void RemoveTest2() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief additional testing of removing values
+ * from tree (removing node with two children)
+ * @returns void
+ */
 void RemoveTest3() {
     cout << "Testing removing node with two children..." << endl;
 
@@ -1361,6 +1442,11 @@ void RemoveTest3() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief additional testing of removing values
+ * from tree (removing from a larger tree)
+ * @returns void
+ */
 void RemoveTest4() {
     cout << "Removing from larger tree "
     "(recursive call with IOS or IOP test)..." << endl;
@@ -1391,6 +1477,11 @@ void RemoveTest4() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief testing if tree properly
+ * rotates after inserting certain values
+ * @returns void
+ */
 void RemoveTestRotateCase() {
     cout << "Testing removing that requires double-black fix..." << endl;
 
@@ -1488,6 +1579,11 @@ void RemoveTestRotateCase() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief testing removing a value with a "red sibling"
+ * from tree
+ * @returns void
+ */
 void RemoveTestRedSiblingCase() {
     cout << "Testing remove that requires double-black fix with red "
     "sibling case..." << endl;
@@ -1508,6 +1604,11 @@ void RemoveTestRedSiblingCase() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief testing memory management as values are
+ * removed from tree
+ * @returns void
+ */
 void LargeRandomRemoveMemoryTest() {
     cout << "Giant Remove Test..." << endl;
 
@@ -1536,6 +1637,11 @@ void LargeRandomRemoveMemoryTest() {
     cout << "PASSED!" << endl << endl;
 }
 
+/**
+ * @brief more testing of removing certain nodes from
+ * a tree 
+ * @returns void
+ */
 void LargerComprehensiveRemoveTest() {
     cout << "Testing many removes from larger tree..." << endl;
 
@@ -1561,7 +1667,11 @@ void LargerComprehensiveRemoveTest() {
     cout << "PASSED!" << endl << endl;
 }
 
-
+/**
+ * @brief main function where all test functions are
+ * called
+ * @returns void
+ */
 int main() {
     TestSimpleConstructor();
 
